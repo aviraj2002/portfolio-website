@@ -1,0 +1,604 @@
+/*---------Website theme---------*/
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+:root {
+  --hue-1: 257;
+  --hue-2: 47;
+  --bg-color: hsl(var(--hue-1), 100%, 97%);
+  --main-color-1: hsl(var(--hue-1), 100%, 60%);
+  --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+  --main-color-dark-2: hsl(var(--hue-2), 100%, 61%);
+  --bg-color-1: hsl(var(--hue-1), 100%, 97%);
+  --bg-color-2: #fff;
+  --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+  --bg-color-transparent: rgba(255, 255, 255, 0.6);
+  --heading-color: hsl(var(--hue-1), 61%, 24%);
+  --text-color: hsl(var(--hue-1), 17%, 63%);
+  --main-color-2: hsl(var(--hue-2), 100%, 61%);
+  --section-padding: 7rem;
+}
+
+/*----------General styles-----------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #d4dde4d4;
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background-color: hsl(var(--hue-1), 100%, 60%, 0.9);
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/*-------------Reuasble code---------------*/
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 75rem;
+  /* padding: 0 1.5rem; */
+  margin: 0 auto;
+}
+.logo {
+  margin-right: 1.5rem;
+  height: 120px;
+  line-height: 120px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.logo span {
+  color: var(--main-color-1);
+}
+.heading {
+  color: var(--heading-color);
+  font-size: 3rem;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.text {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin: 2rem 0;
+}
+
+.sub-heading {
+  color: var(--heading-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-left: 3px solid var(--main-color-2);
+  padding: 0.13rem 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.heading {
+  color: var(--heading-color);
+  font-size: 3rem;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.text {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin: 2rem 0;
+  line-height: 2.3;
+}
+
+.cta {
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+.cta .btn {
+  margin-right: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  border-radius: 17px;
+  background-color: var(--main-color-1);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  min-width: 125px;
+  text-transform: captalize;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--main-color-dark-1);
+}
+.btn.secondary-btn {
+  background-color: transparent;
+  color: var(--main-color-1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  border-bottom: 2.5px solid var(--main-color-2);
+  padding: 0.15rem 0;
+  position: relative;
+  border: none;
+}
+
+.section {
+  position: relative;
+  padding: var(--section-padding) 0;
+}
+
+.triangle {
+  width: 95px;
+  opacity: 0.18;
+}
+
+.showcase-area .circle {
+  position: absolute;
+  width: 190px;
+  left: 90%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 0.45;
+}
+.square {
+  width: 100px;
+  aspect-ratio: auto;
+  height: auto;
+  margin-top: 2rem;
+  display: block;
+  margin-left: 26%;
+  margin-right: auto;
+}
+.sh-sqaure {
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  display: block;
+  top: 25%;
+  left: 15%;
+  width: 230px;
+  height: auto;
+  opacity: 0.2;
+}
+/*------------------Navbar Styling-------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  /* background-color:rgb(226, 43, 52);  */
+}
+header.scrolled {
+  background-color: var(--bg-color-transparent);
+  box-shadow: 0 10px 20px 0.1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+}
+nav.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .logo {
+  height: 120px;
+  line-height: 120px;
+}
+header.scrolled.logo {
+  height: 120px;
+  line-height: 120px;
+}
+
+.links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.links ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  font-weight: 500;
+  opacity: 0.9;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--main-color-1);
+  bottom: 0;
+  left: -5px;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  color: var(--heading-color);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  opacity: 0.2;
+}
+
+.toggle-btn {
+  color: var(--heading-color);
+  min-width: 40px;
+  height: 40px;
+  background-color: var(--bg-color-2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  align-items: center;
+  margin-left: auto;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.toggle-btn:hover {
+  filter: brightness(100%);
+}
+
+/*-------------Background Image Styling------------*/
+.background-section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/*-----------------Showcase Area Styling-------------------*/
+.showcase-area {
+  padding: 120px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.showcase-area .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: calc(100vh - 120px);
+  align-items: center;
+}
+
+.showcase-area .sub-heading {
+  margin-bottom: 0.7m;
+}
+.showcase-area .heading {
+  font-size: 3rem;
+}
+
+.show-area .text {
+  margin: 0.8rem 0;
+}
+
+.showcase-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100% + 200px);
+  background-image: linear-gradient(
+    124deg,
+    var(--main-color-1),
+    var(--main-color-2)
+  );
+  background-color: var(--main-color-1);
+  border-radius: 0 0 80px 80px;
+  margin-top: -50px;
+}
+.showcase-image .person {
+  position: relative;
+  width: 55%;
+  transform: translateX(-50%) rotate(-4deg);
+  bottom: 0;
+  left: 50%;
+  margin-left: -50%;
+}
+
+.cta {
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+.cta .btn {
+  margin-right: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  border-radius: 17px;
+  background-color: var(--main-color-1);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--main-color-dark-1);
+}
+.btn.secondary-btn {
+  background-color: transparent;
+  color: var(--main-color-1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  border-bottom: 2.5px solid var(--main-color-2);
+  padding: 0.15rem 0;
+  position: relative;
+  border: none;
+}
+
+.btn.secondary-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.5px;
+  bottom: -2.5px;
+  left: 0;
+  background-color: var(--main-color-1);
+  transition: background-color 0.4s ease-in-out;
+  opacity: 0;
+}
+.btn.secondary-btn:hover::before {
+  background-color: var(--main-color-2);
+  width: 100%;
+  opacity: 1;
+}
+
+/*----------------About Section Styling-----------------*/
+.about .container {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+}
+
+.about .text {
+  margin: 3rem 0 4rem;
+}
+
+.icon {
+  width: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 190px 190px;
+  grid-template-rows: 190px 190px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  column-gap: 2.5rem;
+  row-gap: 100px;
+  margin-right: 2rem;
+}
+
+.about-card {
+  background-color: var(--bg-color-2);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #dcebf5;
+  transition: 0.5s transform;
+  position: relative;
+}
+.about-card:nth-child(1) {
+  border-radius: 40px 40px 5px 40px;
+}
+.about-card:nth-child(2) {
+  margin-top: 50px;
+  border-radius: 40px 40px 40px 5px;
+}
+.about-card:nth-child(3) {
+  margin-top: -50px;
+  border-radius: 40px 5px 40px 40px;
+}
+.about-card:nth-child(4) {
+  border-radius: 5px 40px 40px 40px;
+}
+.about-card h3 {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.about-card:hover {
+  transform: scale(1.1);
+}
+
+.about-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8) contrast(1.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.about-grid::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  border: 15px solid var(--main-color-1);
+  z-index: -1;
+  opacity: 0.07;
+}
+
+.about .triangle {
+  position: absolute;
+  left: 90%;
+  top: 27%;
+  transform: translate(-50%, -50%);
+}
+/*-----------Skilss Sectiion Styling-----------*/
+.skills {
+  overflow: hidden;
+}
+.skills-box {
+  background-color: var(--bg-color-2);
+  padding: 5rem 6rem;
+  border-radius: 20px;
+  width: 100%;
+}
+.box-desc {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.box-desc p.text {
+  flex: 1;
+}
+
+.box-desc .btn {
+  white-space: nowrap;
+}
+
+.sk-progress {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.sk-progress svg {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg);
+}
+
+.sk-progress circle {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.sk-progress .bg {
+  stroke: #e6e6e6;
+}
+
+.progress {
+  stroke: var(--main-color-1);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-dasharray: 427;
+  stroke-dashoffset: 427;
+  animation: none;
+}
+
+@keyframes progress {
+  to {
+    stroke-dashoffset: var(--target);
+  }
+}
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+.sk-title {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.skills-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  padding: 0 4rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.skills .dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.skills .square {
+  position: absolute;
+  top: 72%;  
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 120px;
+  z-index: 0;
+}
