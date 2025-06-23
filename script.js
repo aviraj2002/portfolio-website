@@ -4,13 +4,26 @@ const first_skill = document.querySelector(".skills-wrap"); //
 const sk_counters = document.querySelectorAll(".counter span");
 const progress_bars = document.querySelectorAll(".skills svg .progress");
 
+const ml_section = document.querySelector(".milestones");
+const ml_counters = document.querySelectorAll(".number span");
+
 let skillsPlayed = false;
+let mlPlayed = false;
 
 
 window.addEventListener("scroll", () => {
   stickyNavbar();
-  if (!skillsPlayed) skillsCounter(); // 
+  if (!skillsPlayed) skillsCounter(); 
+  if(!mlPlayed) mlCounter();
 });
+function updateCount(num, maxNum) {
+  let currentNum = +num.innerText;
+
+  if (currentNum < maxNum) {
+    num.innerText = currentNum + 1;
+    setTimeout(() => updateCount(num, maxNum), 12);
+  }
+}
 
 /*----------------Sticky Navbar-----------------*/
 function stickyNavbar() {
@@ -32,14 +45,14 @@ function hasReached(el) {
 }
 
 /*------------Animated Counter-------------*/
-function updateCount(num, maxNum) {
-  let currentNum = +num.innerText;
+// function updateCount(num, maxNum) {
+//   let currentNum = +num.innerText;
 
-  if (currentNum < maxNum) {
-    num.innerText = currentNum + 1;
-    setTimeout(() => updateCount(num, maxNum), 12);
-  }
-}
+//   if (currentNum < maxNum) {
+//     num.innerText = currentNum + 1;
+//     setTimeout(() => updateCount(num, maxNum), 12);
+//   }
+// }
 
 /*------------Skills Progress Animation-------------*/
 function skillsCounter() {
@@ -65,3 +78,17 @@ function skillsCounter() {
     p.style.animation = "progress 2s ease-in-out forwards";
   });
 }
+/*------------Services Counter Animation------------*/
+
+function mlCounter(){
+  if(!hasReached(ml_section))return;
+  mlPlayed = true;
+  ml_counters.forEach((ctr) =>{
+    let target = +ctr.dataset.target;
+    setTimeout(() => {
+      updateCount(ctr, target);
+    },400);
+  })
+
+}
+ 

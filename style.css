@@ -122,24 +122,13 @@ ul {
   font-size: 0.85rem;
   letter-spacing: 0.4px;
   min-width: 125px;
-  text-transform: captalize;
+  /* text-transform: captalize; */
   transition: 0.3s;
   text-align: center;
 }
 
 .btn:hover {
   background-color: var(--main-color-dark-1);
-}
-.btn.secondary-btn {
-  background-color: transparent;
-  color: var(--main-color-1);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0px;
-  border-bottom: 2.5px solid var(--main-color-2);
-  padding: 0.15rem 0;
-  position: relative;
-  border: none;
 }
 
 .section {
@@ -601,4 +590,83 @@ header.scrolled.logo {
   transform: translate(50%, -50%);
   width: 120px;
   z-index: 0;
+}
+/*--------------Services Section Styling---------------*/
+.services .container{
+ display: grid;
+ grid-template-columns: 1fr 1.3fr;
+ column-gap: 6rem;
+ align-items: center;
+}
+
+.milestones{
+ display:grid;
+ width: 100%;
+ grid-template-columns: repeat(3,1fr);
+ align-items: center;
+ text-align: center;
+ justify-content: flex-start;
+ gap: 2rem;
+ justify-items: start;
+ font-weight: bolder;
+}
+.milestones{
+  color: var(--main-color-1);
+  font-size: 1.3rem;
+}
+.milestones h2 span{
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-right: 0.1rem;
+}
+
+.milestones h5{
+  color: var(--heading-color);
+  line-height: 0.9;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.services-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin-top: 2rem;
+}
+
+.srv-card {
+  background-color: var(--bg-color-2);
+  border-radius: 15px;
+  padding: 2.5rem 2.1rem;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.srv-card h3{
+  color: var(--heading-color);
+  font-weight: 660;
+  font-size: 1.05rem;
+}
+
+
+.srv-card .text{
+  margin: 0.7rem 0;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+
+.services .triangles{
+  bottom: 6%;
+  left: 25%;
+  position: absolute;
+  opacity: 0.5;
+  transform:(-50%, -50%);
 }
